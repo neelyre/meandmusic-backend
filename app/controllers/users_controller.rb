@@ -81,6 +81,6 @@ end
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :first_name, :password, :password_digest, :last_name, :age, :gender)
+      params.require(:user).permit(:username, :first_name, :password, :last_name, :instruments, :genre)
     end
 end
