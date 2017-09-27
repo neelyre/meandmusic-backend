@@ -18,7 +18,7 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new(instrument_params)
 
     if @instrument.save
-      render json: @instrument, status: :created, location: @instrument
+      render json: @instrument, status: :created
     else
       render json: @instrument.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class InstrumentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def instrument_params
-      params.require(:instrument).permit(:name, :description, :image-url)
+      params.require(:instrument).permit(:name, :description, :image)
     end
 end
